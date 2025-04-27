@@ -13,6 +13,8 @@ type (
 
 func NewEdges(v Vertices, endpoints Endpoint) Edges {
 	maxEdges := len(v) * (len(v) - 1) / 2
+	(&endpoints).UniquePairs()
+
 	fmt.Println(maxEdges)
 	if len(endpoints) > maxEdges {
 		panic(fmt.Errorf("Invalid endpoints: Maximum number of endpoints for given Vertices is %v\n", maxEdges))
